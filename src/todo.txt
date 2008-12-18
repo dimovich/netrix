@@ -1,0 +1,65 @@
+
+! Triggers are drawn too many times.
+! Triggers are checked too often.
+! Triggers are drawn in a _lame_ way!
+
+
+* Game
+	+ Shadow games.
+	+ Hints during the game.
+	+ Multicolor figures.
+
+* Bot
+	+ Option to record bot game.
+	+ Option to save bot game.
+	+ Improve botlib.
+	+ Check well heights.
+
+* NetrixC
+
+* Graphics
+
+* Replay
+	+ Option to set replay speed.
+	+ Demo files have their map included.
+
+* Console
+	+ Command history.
+	+ Change background color. [DONE]
+	+ Command help.
+	+ Generic console output routine.
+
+* Config
+	+ Comments for config file. [DONE]
+	+ Unified Console and Config code. [DONE]
+
+* Options config:
+	+ Key bindings. [DONE]
+
+* Skin
+
+* MapEd:
+	+ Icon
+	+ Normal Window
+	+ Rewrite save/load
+
+* Score.
+	+ Effects.
+
+* PHP Server:
+	+ Users should have ratings.
+	+ Admins can control who plays with whom.
+
+* Tutorials
+
+* Network code
+
+* Script Editor
+
+* Support for UNICODE and ANSI files
+
+* When paused the AS-es should act as in "Max Payne" (3D).
+
+* Figures controled by mouse
+
+* Multicolor figures.

@@ -1,0 +1,182 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON                    "Netrix.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// SKIN
+//
+
+IDR_SKIN_LEFT           SKIN                    "skin_left.bin"
+IDR_SKIN_RIGHT          SKIN                    "skin_right.bin"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_OPTIONS DIALOGEX 0, 0, 228, 249
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Options"
+FONT 8, "Microsoft Sans Serif", 400, 0, 0xCC
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,228,50,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Cancel",IDCANCEL,124,228,50,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "Game",IDC_STATIC,6,3,108,35
+    PUSHBUTTON      "Load Demo",IDC_BUTTON_LOADDEMO,22,16,72,12,0,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_NEW DIALOGEX 0, 0, 282, 124
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "New Game"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,83,102,50,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Cancel",IDCANCEL,160,102,50,14,0,WS_EX_STATICEDGE
+    GROUPBOX        "Game type",IDC_STATIC,7,3,109,90
+    CONTROL         "Local",IDC_RADIO_LOCAL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,13,13,32,10
+    CONTROL         "Network",IDC_RADIO_NETWORK,"Button",BS_AUTORADIOBUTTON,
+                    13,57,43,10
+    CONTROL         "Single",IDC_RADIO_SINGLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,23,24,35,10
+    CONTROL         "Player vs. Player",IDC_RADIO_VS,"Button",
+                    BS_AUTORADIOBUTTON,23,34,70,10
+    CONTROL         "Player vs. Computer",IDC_RADIO_BOT,"Button",
+                    BS_AUTORADIOBUTTON,23,44,81,10
+    CONTROL         "Player vs. Player",IDC_RADIO_NETVS,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,23,68,70,10
+    CONTROL         "Computer vs. Player",IDC_RADIO_NETBOT,"Button",
+                    BS_AUTORADIOBUTTON,23,78,81,10
+    COMBOBOX        IDC_COMBO_MAP,161,13,94,80,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    GROUPBOX        "Settings",IDC_STATIC,119,3,156,90
+    LTEXT           "Map",IDC_STATIC,143,16,14,8
+    CONTROL         "",IDC_IPADDRESS,"SysIPAddress32",WS_TABSTOP,161,53,92,
+                    13
+    LTEXT           "IP Address",IDC_STATIC,123,54,36,8
+    COMBOBOX        IDC_COMBO_SERVER,161,72,92,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_CHECK_SERVER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,258,73,10,11
+    LTEXT           "Server",IDC_STATIC,135,73,22,8
+    CONTROL         "Record game",IDC_CHECK_RECORD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,100,58,10
+    CONTROL         "",IDC_CHECK_IPADDRESS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,258,56,15,8
+    COMBOBOX        IDC_COMBO_BOT,161,32,94,80,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Bot",IDC_STATIC,145,35,12,8
+END
+
+IDD_DIALOG_RIGHT DIALOGEX 0, 0, 117, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_CONSOLE DIALOGEX 0, 0, 179, 134
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Netrix Console"
+FONT 8, "Courier New", 400, 0, 0xCC
+BEGIN
+    EDITTEXT        IDC_CON_INPUT,1,119,177,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CON_BUFFER,1,1,177,118,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_BOMB         BITMAP                  "bomb.bmp"
+IDB_BITMAP_TELEPORT     BITMAP                  "teleport.bmp"
+IDB_BITMAP_FLAG         BITMAP                  "flag.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

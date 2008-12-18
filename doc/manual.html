@@ -1,0 +1,485 @@
+<html>
+<title>Netrix Manual</title>
+<pre>
+<a name="netrix_manual_top">
+<b>NETRIX 0.2.1 (01 aug 2006)</b>
+    a Tetris clone by dimovich
+    copyright © 2005 dimovich
+
+
+Useful Links:
+    <a href="http://netrix.sourceforge.net">official Netrix homepage</a>
+    <a href="http://en.wikipedia.org/wiki/Tetris">Tetris on Wikipedia</a>
+
+
+
+<b>What is Netrix?</b>
+--------------------
+Netrix is a nice Tetris clone that makes an attempt to take the original
+Tetris concept to a new level. It adds lots of new features to make the
+gaming experience as fun as possible. Netrix is released as an open source
+software.
+
+
+
+<b>Section Listing</b>
+--------------------
+    1. <a href="#1">requirements</a>
+    2. <a href="#2">installation</a>
+    3. <a href="#3">features</a>
+    4. <a href="#4">usage</a>
+        4.a. <a href="#4a">starting a new game</a>
+        4.b. <a href="#4b">gameplay</a>
+        4.c. <a href="#4c">controls</a>
+        4.c. <a href="#4d">console</a>
+        4.d. <a href="#4e">configuration</a>
+    5. <a href="#5">tools</a>
+        5.a. <a href="#5a">PackEd</a>
+        5.b. <a href="#5b">MapEd</a>
+    6. <a href="#6">Netrix-C</a>
+        6.a. <a href="#6a">overview</a>
+        6.b. <a href="#6b">reference</a>
+        6.c. <a href="#6c">built-in functions</a>
+    7. <a href="#7">P.S.</a>
+
+
+
+<a name="1">
+<b>1. Requirements</b>
+--------------------
+    The only requirement is Windows 98, ME, 2000 or XP.
+
+
+<a name="2">
+<b>2. Installation</b>
+--------------------
+    To install Netrix, simply run the installation program.
+
+    To configure it, open "netrix.cfg" file located in the game directory
+    and edit the necessary fields.
+
+
+<a name="3">
+<b>3. Features</b>
+--------------------
+    * 1-player game type.
+    * 2-player game type playable on a local computer against a human or
+      against a computer opponent.
+    * User-modifiable bots using NetrixC built-in scripting language.
+    * Games can be recorded.
+    * Lots of user-modifiable maps to play on.
+    * Extremely small footprint (less than 100k).
+    * Beautiful eye-candy graphics effects.
+    * Console for fast and advanced settings configuration.
+    * Flexible configuration system to help you tweak the game the way you want.
+    * Simple and relaxing interface.
+
+    And many features more...
+
+
+<a name="4">
+<b>4. Usage</b>
+--------------------
+    <a name="4a">
+    <b>4.a. Starting a new game</b>
+
+        To start a new game, press "New" button in the main window.
+        After that, from the "New Game" dialog you can select the type
+        of the game. You can also check the "Record game" checkbox
+        in case you want to record the game.
+
+        <b>SINGLE</b>
+        Select "Single" as the game type. You can also select a map from
+        the map drop-down list (optional).
+
+        <b>PLAYER.VS.PLAYER</b>
+        Select "Player vs. Player" as the game type. You can also select
+        a map from the map drop-down list (optional).
+
+        <b>PLAYER.VS.COMPUTER</b>
+        Select "Player vs. Computer" as the game type. You have to select
+        an available bot from the bot drop-down list.
+
+
+    <a name="4b">
+    <b>4.b. Gameplay</b>
+
+        Netrix is built upon the original Tetris gameplay design. Seven randomly
+        rendered tetrominoes or tetrads - shapes composed of four blocks each - fall
+        down the playing field. The object of the game is to manipulate these
+        tetrominoes with the aim of creating a horizontal line of blocks without gaps.
+        When such a line is created, it disappears, and the blocks above (if any) fall.
+        The game ends when the stack of tetrominoes reaches the top of the playing
+        field and no new tetrominoes are able to enter.
+
+        A novelty introduced in Netrix are maps which can contain bombs, flags and
+        teleport portals. <i>Bombs</i> desintegrate the figure and renders it
+        uncontrollable. <i>Flags</i> for now simply add 10 more points to the score.
+        But this is most likely going to be changed in future Netrix revisions.
+        <i>Teleport</i> portals simply teleport your figure to an unknown place on
+        the playing field.
+
+        Another novelty is the option to play against a bot or against another
+        human player. Each completed line in your playing field adds random blocks
+        to other player's field. So the more complete lines you have, the more
+        likely is for you to win.
+
+
+    <a name="4c">
+    <b>4.c. Controls</b>
+
+            <b>PLAYER-1</b>
+        UP      - rotate figure
+        DOWN    - move figure down
+        LEFT    - move figure left
+        RIGHT   - move figure right
+        SPACE   - crush figure
+
+            <b>PLAYER-2</b>
+        5       - rotate figure
+        2       - move figure down
+        1       - move figure left
+        3       - move figure right
+        0       - crush figure
+
+
+    <a name="4d">
+    <b>4.d. Console</b>
+
+        To toggle the console on, press "~" (tilda) key on your keyboard. To hide
+        the console window, press escape. You will find the console a handy tool
+        in many situations. You can use it to hand-tweak some options or make
+        use of some more advanced features Netrix offers such as bot testing. All
+        commands begin with a forward slash.
+
+        Here is the list of all the available commands:
+
+        <b>set</b>          set a configuration variable. eg: <b><i>/set figcolor 230 100 50</i></b>
+        <b>saveconfig</b>   save current configuration to "netrix.cfg".
+        <b>loadres</b>      reload resources.
+        <b>testbot</b>      test a bot. eg: <b><i>/testbot X-Bot</i></b>
+        <b>about</b>        display copyright and version info.
+        <b>quit</b>         quit Netrix.
+
+
+    <a name="4e">
+    <b>4.e. Configuration</b>
+
+        Netrix has a flexible configuration system. All settings are saved to
+        "netrix.cfg" file located in game directory.
+
+        Here is the list of all available configuration variables:
+
+        <b>figcolor</b>           (<i>RGB</i>)    figure color
+        <b>nextfigcolor</b>       (<i>RGB</i>)    next figure color
+        <b>spacecolor</b>         (<i>RGB</i>)    action space background color
+        <b>nextspacecolor</b>     (<i>RGB</i>)    next figure space background color
+        <b>groundcolor</b>        (<i>RGB</i>)    action space ground color
+        <b>scorespacecolor</b>    (<i>RGB</i>)    score space background color
+        <b>scoretextcolor</b>     (<i>RGB</i>)    score space text color
+        <b>base</b>               (<i>STRING</i>) path to base location
+        <b>playrate</b>           (<i>FLOAT</i>)  demo play rate
+        <b>effilluminate</b>      (<i>BOOL</i>)   turn on/off illumination effect
+        <b>effilluminatecolor</b> (<i>RGB</i>)    illumination effect color
+        <b>effpathcast</b>        (<i>BOOL</i>)   turn on/off path-cast effect
+        <b>effpathcastcolor</b>   (<i>RGB</i>)    path-cast effect color
+        <b>efflinekill</b>        (<i>BOOL</i>)   turn on/off line-kill effect
+        <b>efflinekillcolor</b>   (<i>RGB</i>)    line-kill effect color
+
+        Note:
+            <b><i>RGB</i></b> - 3 integer values for red, green and blue color components.
+            <b><i>STRING</i></b> - a sequence of characters surrounded by double quotes.
+            <b><i>FLOAT</i></b> - a floating point number.
+            <b><i>BOOL</i></b> - a number that has a value of 0 or 1.
+
+        You can also have comments in config file:
+        eg: <i>//this is a comment</i>
+
+
+<a name="5">
+<b>5. Tools</b>
+--------------------
+    <a name="5a">
+    <b>5.a. PackEd</b>
+
+        PackEd is a simple Netrix pack files builder and extractor. Packs
+        can contain maps (*.map) and bot scripts (*.c).
+
+        To build a pack, press "Build Pack" button. During build time, all
+        resources are compressed. Packs are also checked for consistency at
+        game load time so that to ensure they are not corrupted.
+
+        To extract pack file contents to a folder, press "Extract Pack" button.
+
+        Because of the small size and consistency check, packs should be
+        the desired method of sharing and storing your maps and bot scripts.
+
+
+    <a name="5b">
+    <b>5.b. MapEd</b>
+
+        MapEd is a simple map editor for Netrix. The symbols on the toolbar
+        stand for: <b>T</b> - teleport, <b>B</b> - bomb and <b>F</b> - flag.
+        To place any of these triggers on the map, press the corresponding
+        button on the toolbar and then set the desired map cell using your
+        left mouse button. The right mouse button acts as an eraser.
+
+
+<a name="6">
+<b>6. NetrixC - Scripting Language</b>
+--------------------
+    <a name="6a">
+    <b>6.a. Overview</b>
+
+        NetrixC is a C-like scripting language designed with simplicity in mind.
+        It supports only a small subset of C, but this should be enough for everyone...
+
+        NetrixC has support for:
+
+        * User defined functions (can be recursive).
+        * Global and local variables (integers and floats).
+        * Flow control statements (<i>switch, while, do-while, if-else</i>).
+        * Built-in functions for bot programming.
+
+
+    <a name="6b">
+    <b>6.b. Reference</b>
+
+        I'll try to jot down some hints and advices for you to get going
+        with NetrixC as fast as possible. So here we go!
+
+        Every script must have two functions: Init() and Update(). The first one
+        is called only once at bot load. Update() is called each time an update
+        for figure position is needed.
+
+        The only supported types are integers (<b>int</b>) and floats (<b>float</b>).
+
+        All functions must return an integer or a float. So you can have sth.
+        like:
+        <i>
+            int <b>Init</b>() {...}
+            int <b>Update</b>() {...}
+        </i>
+
+        There is support for both types of comments:<i>
+
+            //this is a single line comment
+
+            /*this is a multi-line
+              comment*/</i>
+
+        Every flow control statement body must be surrounded by curly braces:<i>
+
+            <b>if</b>( 1 )
+            {
+                ...
+            }
+
+            <b>switch</b>( i )
+            {
+                ...
+            }
+
+            etc.</i>
+
+        In Netrix, the playing field has 3 layers. The first one is for the ground
+        (landed figures), the second one is for the falling figure, and the third
+        one is for the triggers. Each time a figure lands, it is being erased from
+        the second layer and written to the first one.
+
+        It is a good idea to take a look at the available bots and see how they have
+        been written. I usually put a lot of comments, so it shouldn't be too difficult.
+
+        You can perform <b>++</b> and <b>--</b> operations on floats.
+
+        <b>for</b> loop is slightly faster than <b>while</b> loop.
+
+        Global variables are slightly faster and a more optimal choice when speed is
+        critical.
+
+        You can do % (<i>mod</i>) operation on floats. Eg: <i>3.5 % 2</i> will result in 1.5.
+
+        <b>break</b> statement outside any flow control statements (<b>while, switch</b> and
+        <b>do-while</b>) is similar to <b>return</b>. The only difference between them is that,
+        while <b>return</b> leaves the current function, <b>break</b> leaves the current
+        script.
+
+        <b>case</b> can have as an argument a constant, function or variable.
+
+        Do <i>not</i> use curly braces inside <b>switch</b> statement block.
+
+
+
+    <a name="6c">
+    <b>6.c. Built-in functions</b>
+
+        <b>int</b> SetFigure( <b>int</b> xPos, <b>int</b> yPos, <b>int</b> state )
+
+            Set the figure end-position and state (rotation). The last parameter
+            can take a value in 0..3 range. The function returns <b>1</b> in case
+            of succes, or <b>0</b> otherwise.
+            eg: <i>SetFigure( 3, 10, 2 );</i>
+
+
+        <b>int</b> WriteFigure()
+
+            Write figure to first layer. This is useful when writing 2-piece AI bots.
+
+
+        <b>int</b> UseFigure( <b>int</b> index )
+
+            Use current (<b>0</b>) or next (<b>1</b>) figure. This is useful when
+            writing 2-piece AI bots.
+            eg: <i>UseFigure( 1 );</i>
+
+
+        <b>int</b> GetState()
+
+            Returns current figure state (rotation).
+            eg: <i>state = GetState();</i>
+
+
+        <b>int</b> GetPosX()
+
+            Returns current figure x position.
+            eg: <i>xPos = GetPosX();</i>
+
+
+        <b>int</b> GetPosY()
+
+            Returns current figure y position.
+            eg: <i>yPos = GetPosY();</i>
+
+
+        <b>int</b> GetSpaceX()
+
+            Returns the playing field width.
+            eg: <i>spaceX = GetSpaceX();</i>
+
+
+        <b>int</b> GetSpaceY()
+
+            Returns the playing field height.
+            eg: <i>spaceY = GetSpaceY();</i>
+
+
+        <b>int</b> PushLeft()
+
+            Move current figure to left playing field edge. The function returns
+            resultant figure x position.
+            eg: <i>leftX = PushLeft();</i>
+
+
+        <b>int</b> PushRight()
+
+            Move current figure to right playing field edge. The function returns
+            the resultant figure x position.
+            eg: <i>rightX = PushRight();</i>
+
+
+        <b>int</b> PushDown()
+
+            Move current figure to bottom of the playing field. The function returns
+            the resultant figure y position.
+            eg: <i>bottomY = PushDown();</i>
+
+
+        <b>int</b> RowsEliminated()
+
+            Returns the hypothetical number of rows that could be eliminated.
+            eg: <i>rows = RowsEliminated();</i>
+
+
+        <b>int</b> OccupiedCells()
+
+            Returns the number of cells the figure occupies.
+            eg: <i>cells = OccupiedCells();</i>
+
+
+        <b>int</b> ShadowedHoles()
+
+            Returns the number of holes the figure directly shadows.
+            eg: <i>holes = ShadowedHoles();</i>
+
+
+        <b>int</b> PileHeight()
+
+            Returns the pile height. The value is somewhat equivalent to
+            figure y position.
+            eg: <i>pile = PileHeight();</i>
+
+
+        <b>int</b> TouchingEdges()
+
+            Returns the number of touching edges between figure and ground.
+            eg: <i>edges = TouchingEdges();</i>
+
+
+        <b>int</b> PushAS()
+
+            Push the current Action Space (layer one) to stack.
+            eg: <i>PushAS();</i>
+
+
+        <b>int</b> PopAS()
+
+            Pop the top-most Action Space from the stack. This will
+            automatically copy it to current Action Space.
+            eg: <i>PopAS();</i>
+
+
+        <b>int</b> RestoreAS()
+
+            Copy the top-most Action Space from the stack to current
+            Action Space. This will <i>not</i> remove it from the stack.
+            eg: <i>RestoreAS();</i>
+
+
+        <b>int</b> EliminateRows()
+
+            This will eliminate any hypothetical complete lines (rows). It is
+            useful in 2-piece AI bots after you called WriteFigure().
+            eg: <i>EliminateRows();</i>
+
+
+        <b>int</b> Message()
+
+            Display a message on the lower part of the Netrix window.
+            eg: <i>Message( "bot %s salutes you %d times!", "Bush", 3 );</i>
+                will display: "bot Bush salutes you 3 times!".
+
+
+        <b>int</b> Log()
+
+            The same as Message(), only it outputs the message to a log file (in case
+            log has been enabled at compile time).
+            eg: <i>Log( "%s are the coolest animals!", "Monkyes" );</i>
+                will display: "Monkeys are the cooles animals!".
+
+
+        <b>int</b> Random( <b>int</b> n )
+
+            Return a random number from the 0..n-1 range.
+            eg: <i>i = Random( 3 );</i>
+
+
+        <b>int</b> Quit()
+
+            Quits the game.
+
+
+<a name="7">
+<b>7. P.S. - Post Scriptum</b>
+--------------------
+
+    There are three things you could do now:
+
+    1) Play Netrix.
+    2) Share this game with all your friends.
+    3) Send me an e-mail with any comments you have regarding this game and manual.
+       You can contact me at: <i>dimovich@users.sourceforge.net</i>
+
+
+<a href="#netrix_manual_top">return to top</a>
+</pre>
+</html>
